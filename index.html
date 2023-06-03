@@ -100,27 +100,60 @@
 							</section>
 
 
-						<!-- Five -->
-							<section id="five">
-								<div class="container">
-									<h3>Contact Me</h3>
-									<p>###</p>
-									<form method="post" action="https://formsubmit.co/d9d42de46383139ddfc0f27a92b34cbb">
-										<div class="row gtr-uniform">
-											<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-											<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-											<div class="col-12"><input type="text" name="subject" id="subject" placeholder="Subject" /></div>
-											<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea></div>
-											<div class="col-12">
-												<ul class="actions">
-													<li><input type="submit" class="primary" value="Send Message" /></li>
-													<li><input type="reset" value="Reset Form" /></li>
-												</ul>
-											</div>
-										</div>
-									</form>
-								</div>
-							</section>
+							<style>
+		    /* Custom styles for the pop-up */
+		    .popup {
+		        display: none;
+		        position: fixed;
+		        top: 50%;
+		        left: 50%;
+		        transform: translate(-50%, -50%);
+		        background-color: mediumaquamarine;
+		        padding: 20px;
+		        border-radius: 10px;
+		        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+		        z-index: 9999;
+		        color: white;
+		        text-align: center;
+		    		}
+				</style>
+
+		<!-- Five -->
+		<section id="five">
+		    <div class="container">
+		        <h3>Contact Me</h3>
+		        <p>###</p>
+		        <form method="post" action="https://formsubmit.co/d9d42de46383139ddfc0f27a92b34cbb" onsubmit="showPopup()">
+		            <div class="row gtr-uniform">
+		                <div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
+		                <div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
+		                <div class="col-12"><input type="text" name="subject" id="subject" placeholder="Subject" /></div>
+		                <div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea></div>
+										<div class="col-12"><input type="hidden" name="_next" value="">
+		                <div class="col-12">
+		                    <ul class="actions">
+		                        <li><input type="submit" class="primary" value="Send Message" /></li>
+		                        <li><input type="reset" value="Reset Form" /></li>
+		                    </ul>
+		                </div>
+		            </div>
+		        </form>
+		    </div>
+		</section>
+
+		<!-- Popup window -->
+		<div id="popup" class="popup">Message Sent</div>
+
+		<script>
+		    function showPopup() {
+		        var popup = document.getElementById("popup");
+		        popup.style.display = "block";
+		        setTimeout(function() {
+		            popup.style.display = "none";
+		        }, 3000); // Hide the pop-up after 3 seconds
+		    }
+		</script>
+
 
 						<!-- Five -->
 						<!--
